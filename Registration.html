@@ -9,29 +9,66 @@
 </head>
 
 <body>
-    <h2 style="text-align: center;">Registration Form</h2>
+    <form action="">
+        <fieldset style="display: flex; justify-content: center;">
+            <legend style="text-align: center;">Registration Form</legend>
+            <table border="black">
+                <tr>
+                    <td>First Name:</td>
+                    <td><input type="text" name="fname" value="fname" placeholder="Write First Name"></td>
+                </tr>
+                <tr>
+                    <td>Second Name:</td>
+                    <td><input type="text" name="Secondname" value="sname" placeholder="Write Second Name"></td>
+                </tr>
+                <tr>
+                    <td>Id:</td>
+                    <td><input type="number" name="id" placeholder="Id"></td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td><input type="password" name="pass" value="pass"></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="email" value="id" placeholder="Email"></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><input type="radio" name="gender" value="gender">
+                        <input type="radio" name="gender" value="gender">
+                        <input type="radio" name="gender" value="gender">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Agree:</td>
+                    <td><input type="checkbox" name="agree" value="agree"></td>
+                </tr>
+                <tr>
+                    <td>Depertment:</td>
+                    <td><select name="dep" id="dep">
+                            <option value="CSE">CSE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="archi">Archi</option>
 
-    First Name:
-    <input type="text" id="name">
-    <br>
-    Last Name:
-    <input type="text" id="name">
-    <br>
-        ID:   
-    <input type="number" >
-    <br>
-    Password:
-    <input type="password">
-    <br>
-    Gender:
-    <input type="radio" name="gen"> Male
-    <input type="radio" name="gen"> Female
-    <input type="radio" name="gen"> Others
-    <br>
-    Agree us:
-    <input type="checkbox" >
-    
-
+                        </select></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" name="Address" value="Address"></td>
+                </tr>
+                <tr>
+                    <td>Choose File:</td>
+                    <td><input type="file" name="file" id="file"></td>
+                </tr>
+                <tr>
+                    <td><button>Submit</button>
+                        <button>Reset</button>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
 
 </body>
 
