@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degree</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend> Degree</legend>
+        <input type="checkbox" name="degree">SSC
+        <input type="checkbox" name="degree">HSC
+        <input type="checkbox" name="degree">BSc
+        <button name="button" id="button" onclick="checkbox_validation()">Submit</button>
+        <p id="Error"></p>
+    </fieldset>
+    <script>
+        function checkbox_validation() {
+            let check_boxes = document.getElementsByName("degree");
+            let checked = false;
+            let Error = document.getElementById("Error");
+            for (i of check_boxes) {
+                if (i.checked) {
+                    checked=true;
+                    break;
+                }
+            }
+            if(checked)
+            {
+                Error.innerHTML="Valid input";
+            }else{
+                Error.innerHTML="Invalid Input";
+            }
+        }
+    </script>
+</body>
+
+</html>
