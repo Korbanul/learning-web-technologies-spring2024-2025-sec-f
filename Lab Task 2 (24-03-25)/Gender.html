@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender</title>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>Gender</legend>
+        <input type="radio" name="Gender" id="Gender">Male
+        <input type="radio" name="Gender" id="Gender">Female
+        <input type="radio" name="Gender" id="Gender">Others
+        <button name="button" id="button" onclick="checkRadio()">Submit</button>
+        <p id="Error"></p>
+    </fieldset>
+    <script>
+        function checkRadio() {
+            let radios = document.getElementsByName("Gender");
+            let isChecked = false;
+
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    isChecked = true;
+                    break;
+                }
+            }
+
+            let errorMessage = document.getElementById("Error");
+
+            if (!isChecked) {
+                errorMessage.innerText = "Please select at least one option.";
+            } else {
+                errorMessage.innerText = "Valid";
+
+            }
+        }
+    </script>
+</body>
+
+</html>
