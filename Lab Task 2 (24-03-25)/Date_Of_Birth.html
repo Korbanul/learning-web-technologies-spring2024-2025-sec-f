@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Of Birth</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Date Of Birth</legend>
+        <p>dd mm yyyy</p>
+        <input type="number" name="date" id="day">/
+        <input type="number" name="date" id="month">/
+        <input type="number" name="date" id="year">
+        <hr>
+        <button id="button" onclick="Date_Validation()">Submit</button>
+        <p id="Error"></p>
+    </fieldset>
+</body>
+<script>
+    function Date_Validation() {
+        let day = document.getElementById("day").value;
+        let month = document.getElementById("month").value;
+        let year = document.getElementById("year").value;
+        let Error = document.getElementById("Error");
+
+        if (day == "" || month == "" || year == "" || (day <= 0 || day > 31) || (month <= 0 || month > 12) || (year <1900 || year > 2016)) {
+            Error.innerHTML = "Wrong Date";
+        } else {
+            Error.innerHTML="Valid Date";
+        }
+    }
+</script>
+
+</html>
