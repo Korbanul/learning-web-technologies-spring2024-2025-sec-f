@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Validation</title>
+</head>
+
+<body>
+    <label for="name">Name</label><br>
+    <input type="text" name="name" id="name"><br>
+    <input type="button" id="button" name="button" value="Submit" onclick="Name_Validation()">
+
+    <p id="Error"></p>
+    <script>
+
+        function Word_Count(str) {
+            return str.trim().split(/\s+/).length;
+        }
+
+        function First_Char_Check(str) {
+
+            let firstChar = str.charCodeAt(0);
+            if ((firstChar >= 65 && firstChar <= 90) || (firstChar >= 97 && firstChar <= 122)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function Uname_Contain(str) {
+            let uname = str;
+            for (let i of uname) {
+                if (First_Char_Check(i) || i == ' ' || i == '.' || i == '-') {
+                    continue;  
+                } else {
+                    return false;  
+                }
+            }
+            return true;
+        }
+
+
+        function Name_Validation() {
+            let uname = document.getElementById("name").value;
+            let Error = document.getElementById("Error");
+
+            let uname_Word_count = Word_Count(uname);
+            if (uname == "" || uname_Word_count < 2 || !First_Char_Check(uname)) {
+                {
+                    Error.innerHTML = "Error Name Feild";
+                }
+
+            } else {
+                Error.innerHTML = " Valid Name";
+            }
+        }
+    </script>
+</body>
+
+</html>
