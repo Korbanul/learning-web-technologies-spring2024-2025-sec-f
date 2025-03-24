@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Validation</title>
+</head>
+
+<body>
+    <label for="email">Email</label><br>
+    <input type="email" name="email" id="email"><br>
+    <button id="button" name="button" onclick="Email_validation()">Submit</button>
+    <p id="Error"></p>
+</body>
+<script>
+
+    function check(str) {
+
+        let v1 = false, v2 = false;
+        let last = str.slice(-4);
+        if (last == ".com") {
+            v2 = true;
+        }
+        for (i of str) {
+            if (i == "@") {
+                v1 = true;
+            }
+        }
+        if (v1 && v2) {
+            return true;
+        }
+    }
+
+    function Email_validation() {
+        let email = document.getElementById("email").value;
+        let Error = document.getElementById("Error");
+
+        if (email == "" || !check(email)) {
+            Error.innerHTML = "Wrong Email";
+        } else {
+            Error.innerHTML = "Valid Email";
+
+        }
+
+    }
+</script>
+
+</html>
